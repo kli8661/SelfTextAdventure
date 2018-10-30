@@ -33,5 +33,4 @@ public class Person {
 		this.yLoc = yLoc;
 	}
 
-
 }
