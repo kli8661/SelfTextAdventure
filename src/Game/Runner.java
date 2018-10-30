@@ -1,8 +1,8 @@
 package Game;
 
 import People.Person;
-import Rooms.Room;
-import Rooms.WinningRoom;
+import Rooms.Classroom;
+import Rooms.Lab;
 
 import java.util.Scanner;
 
@@ -13,21 +13,21 @@ public class Runner {
 	
 	public static void main(String[] args)
 	{
-		Room[][] building = new Room[5][5];
+		Classroom[][] building = new Classroom[5][5];
 		
 		//Fill the building with normal rooms
 		for (int x = 0; x<building.length; x++)
 		{
 			for (int y = 0; y < building[x].length; y++)
 			{
-				building[x][y] = new Room(x,y);
+				building[x][y] = new Classroom(x,y);
 			}
 		}
 		
 		//Create a random winning room.
 		int x = (int)(Math.random()*building.length);
 		int y = (int)(Math.random()*building.length);
-		building[x][y] = new WinningRoom(x, y);
+		building[x][y] = new Lab(x, y);
 		 
 		 //Setup player 1 and the input scanner
 		Person player1 = new Person("FirstName", "FamilyName", 0,0);
@@ -56,9 +56,9 @@ public class Runner {
 	 * @param move the move chosen
 	 * @param p person moving
 	 * @param map the 2D array of rooms
-	 * @return
+	 * @return 
 	 */
-	public static boolean validMove(String move, Person p, Room[][] map)
+	public static boolean validMove(String move, Person p, Classroom[][] map)
 	{
 		move = move.toLowerCase().trim();
 		switch (move) {

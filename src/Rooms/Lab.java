@@ -3,10 +3,10 @@ package Rooms;
 import Game.Runner;
 import People.Person;
 
-public class WinningRoom extends Room
+public class Lab extends Classroom
 {
 
-	public WinningRoom(int x, int y) {
+	public Lab(int x, int y) {
 		super(x, y);
 
 	}
