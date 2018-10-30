@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/RoomLab.iml" filepath="$PROJECT_DIR$/RoomLab.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SelfTextAdventure.iml" filepath="$PROJECT_DIR$/SelfTextAdventure.iml" />
     </modules>
   </component>
 </project>
