@@ -1,36 +1,26 @@
 package Rooms;
 
-import People.Person;
+import Game.Runner;
+import People.Student;
 
-public class Classroom {
-	Person occupant;
-	int xLoc,yLoc;
-	
-	public Classroom(int x, int y)
-	{
-		xLoc = x;
-		yLoc = y;
+public class Classroom extends Hallway{
+
+	public Classroom(int x, int y) {
+		super(x, y);
+
 	}
 
 	/**
-	 * Method controls the results when a person enters this room.
-	 * @param x the Person entering
+	 * Triggers the game ending conditions.
+	 * @param x the Student entering
 	 */
-	public void enterRoom(Person x)
-	{
-		System.out.println("You enter a plain old room");
+	@Override
+	public void enterRoom(Student x) {
+
 		occupant = x;
 		x.setxLoc(this.xLoc);
 		x.setyLoc(this.yLoc);
+		System.out.println("You found the winning room! Ten points for Gryffindor.");
+		Runner.gameOff();
 	}
-
-	/**
-	 * Removes the player from the room.
-	 * @param x
-	 */
-	public void leaveRoom(Person x)
-	{
-		occupant = null;
-	}
-	
 }

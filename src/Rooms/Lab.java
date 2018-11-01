@@ -1,9 +1,9 @@
 package Rooms;
 
 import Game.Runner;
-import People.Person;
+import People.Student;
 
-public class Lab extends Classroom
+public class Lab extends Hallway
 {
 
 	public Lab(int x, int y) {
@@ -13,10 +13,10 @@ public class Lab extends Classroom
 
 	/**
 	 * Triggers the game ending conditions.
-	 * @param x the Person entering
+	 * @param x the Student entering
 	 */
 	@Override
-	public void enterRoom(Person x) {
+	public void enterRoom(Student x) {
 
 		occupant = x;
 		x.setxLoc(this.xLoc);

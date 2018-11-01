@@ -1,7 +1,8 @@
 package Game;
 
-import People.Person;
-import Rooms.Classroom;
+import Board.School;
+import People.Student;
+import Rooms.Hallway;
 import Rooms.Lab;
 
 import java.util.Scanner;
@@ -13,14 +14,14 @@ public class Runner {
 	
 	public static void main(String[] args)
 	{
-		Classroom[][] building = new Classroom[5][5];
+		School[][] building = new School[5][5];
 		
 		//Fill the building with normal rooms
 		for (int x = 0; x<building.length; x++)
 		{
 			for (int y = 0; y < building[x].length; y++)
 			{
-				building[x][y] = new Classroom(x,y);
+				building[x][y] = new Hallway(x,y);
 			}
 		}
 		
@@ -30,7 +31,7 @@ public class Runner {
 		building[x][y] = new Lab(x, y);
 		 
 		 //Setup player 1 and the input scanner
-		Person player1 = new Person("FirstName", "FamilyName", 0,0);
+		Student player1 = new Student("FirstName", "FamilyName", 0,0);
 		building[0][0].enterRoom(player1);
 		Scanner in = new Scanner(System.in);
 		while(gameOn)
@@ -58,7 +59,7 @@ public class Runner {
 	 * @param map the 2D array of rooms
 	 * @return
 	 */
-	public static boolean validMove(String move, Person p, Classroom[][] map)
+	public static boolean validMove(String move, Student p, School[][] map)
 	{
 		move = move.toLowerCase().trim();
 		switch (move) {
