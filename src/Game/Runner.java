@@ -2,8 +2,10 @@ package Game;
 
 import Board.School;
 import People.Student;
+import Rooms.Classroom;
 import Rooms.Hallway;
 import Rooms.Lab;
+import Rooms.Room;
 
 import java.util.Scanner;
 
@@ -14,7 +16,10 @@ public class Runner {
 	
 	public static void main(String[] args)
 	{
-		School[][] building = new School[5][5];
+
+
+
+		/* School[][] building = new School[7][7];
 		
 		//Fill the building with normal rooms
 		for (int x = 0; x<building.length; x++)
@@ -28,7 +33,7 @@ public class Runner {
 		//Create a random winning room.
 		int x = (int)(Math.random()*building.length);
 		int y = (int)(Math.random()*building.length);
-		building[x][y] = new Lab(x, y);
+		building[x][y] = new School(x,y);
 		 
 		 //Setup player 1 and the input scanner
 		Student player1 = new Student("FirstName", "FamilyName", 0,0);
@@ -49,9 +54,10 @@ public class Runner {
 			
 			
 		}
-		in.close();
+		in.close(); */
 	}
 
+	/*
 	/**
 	 * Checks that the movement chosen is within the valid game map.
 	 * @param move the move chosen
@@ -59,7 +65,8 @@ public class Runner {
 	 * @param map the 2D array of rooms
 	 * @return
 	 */
-	public static boolean validMove(String move, Student p, School[][] map)
+
+	/* public static boolean validMove(String move, Student p, School[][] map)
 	{
 		move = move.toLowerCase().trim();
 		switch (move) {
@@ -119,6 +126,7 @@ public class Runner {
 	{
 		gameOn = false;
 	}
+	*/
 	
 
 

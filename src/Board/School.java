@@ -1,25 +1,22 @@
 package Board;
 
-import Rooms.Classroom;
-import Rooms.Closet;
-import Rooms.Hallway;
-import Rooms.Lab;
+import Rooms.*;
 
 public class School {
 
-    private String[][] school;
+    private Room[][] school;
 
-    public School(String[][] school)
+    public School(Room[][] school)
     {
         this.school = school;
     }
 
-    public void edit(String replace, int row, int column)
+    public void edit(Room replace, int row, int column)
     {
         school[row][column] = replace;
     }
 
-    public void fill(String str)
+    public void fill(Room str)
     {
         for(int i = 0; i < school.length; i++)
         {

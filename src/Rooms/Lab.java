@@ -3,7 +3,7 @@ package Rooms;
 import Game.Runner;
 import People.Student;
 
-public class Lab extends Hallway
+public class Lab extends Hallway implements Room
 {
 
 	public Lab(int x, int y) {

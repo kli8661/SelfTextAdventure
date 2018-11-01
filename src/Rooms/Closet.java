@@ -3,7 +3,7 @@ package Rooms;
 import Game.Runner;
 import People.Student;
 
-public class Closet extends Hallway{
+public class Closet extends Hallway implements Room{
 
     public Closet(int x, int y) {
         super(x, y);

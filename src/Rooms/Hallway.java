@@ -2,7 +2,7 @@ package Rooms;
 
 import People.Student;
 
-public class Hallway {
+public class Hallway implements Room{
     Student occupant;
     int xLoc,yLoc;
 
@@ -18,7 +18,7 @@ public class Hallway {
      */
     public void enterRoom(Student x)
     {
-        System.out.println("You enter a plain old room");
+        System.out.println("You enter a hallway");
         occupant = x;
         x.setxLoc(this.xLoc);
         x.setyLoc(this.yLoc);
