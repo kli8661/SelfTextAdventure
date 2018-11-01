@@ -1,6 +1,6 @@
 package Board;
 
-import Rooms.*;
+import Rooms.Room;
 
 public class School {
 
