@@ -1,13 +1,6 @@
 package Game;
 
-import Board.School;
 import People.Student;
-import Rooms.Classroom;
-import Rooms.Hallway;
-import Rooms.Lab;
-import Rooms.Room;
-
-import java.util.Scanner;
 
 public class Runner {
 	
@@ -19,7 +12,7 @@ public class Runner {
 
 
 
-		/* School[][] building = new School[7][7];
+		/* RoomType[][] building = new RoomType[7][7];
 		
 		//Fill the building with normal rooms
 		for (int x = 0; x<building.length; x++)
@@ -33,7 +26,7 @@ public class Runner {
 		//Create a random winning room.
 		int x = (int)(Math.random()*building.length);
 		int y = (int)(Math.random()*building.length);
-		building[x][y] = new School(x,y);
+		building[x][y] = new RoomType(x,y);
 		 
 		 //Setup player 1 and the input scanner
 		Student player1 = new Student("FirstName", "FamilyName", 0,0);
@@ -66,7 +59,7 @@ public class Runner {
 	 * @return
 	 */
 
-	/* public static boolean validMove(String move, Student p, School[][] map)
+	/* public static boolean validMove(String move, Student p, RoomType[][] map)
 	{
 		move = move.toLowerCase().trim();
 		switch (move) {

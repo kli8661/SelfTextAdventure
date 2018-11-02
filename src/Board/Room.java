@@ -1,14 +1,17 @@
 package Board;
 
-import Rooms.Room;
-
-public class School {
+public class Room {
 
     private Room[][] school;
 
-    public School(Room[][] school)
+    public Room(Room[][] school)
     {
         this.school = school;
+    }
+
+    public Room(int x, int y)
+    {
+        this.school = new Room[x][y];
     }
 
     public void edit(Room replace, int row, int column)

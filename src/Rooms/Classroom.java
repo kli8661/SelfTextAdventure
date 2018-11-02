@@ -1,9 +1,8 @@
 package Rooms;
 
-import Game.Runner;
 import People.Student;
 
-public class Classroom extends Hallway implements Room{
+public class Classroom extends Hallway implements RoomType {
 
 	public Classroom(int x, int y) {
 		super(x, y);
@@ -20,7 +19,6 @@ public class Classroom extends Hallway implements Room{
 		occupant = x;
 		x.setxLoc(this.xLoc);
 		x.setyLoc(this.yLoc);
-		System.out.println("You found the winning room! Ten points for Gryffindor.");
-		Runner.gameOff();
+		System.out.println("You found a classroom!");
 	}
 }
