@@ -1,6 +1,6 @@
 package Game;
 
-import People.Student;
+import Rooms.Room;
 
 public class Runner {
 	
@@ -9,7 +9,14 @@ public class Runner {
 	
 	public static void main(String[] args)
 	{
-
+		Room[][] school = new Room[6][6];
+		for(int x = 0; x < school.length; x++)
+		{
+			for(int y = 0; y < school[x].length; y++)
+			{
+				school[x][y] = new Room(x,y);
+			}
+		}
 
 
 		/* RoomType[][] building = new RoomType[7][7];
@@ -19,7 +26,7 @@ public class Runner {
 		{
 			for (int y = 0; y < building[x].length; y++)
 			{
-				building[x][y] = new Hallway(x,y);
+				building[x][y] = new Room(x,y);
 			}
 		}
 		

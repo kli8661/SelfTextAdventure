@@ -1,20 +1,17 @@
 package Board;
 
-import Rooms.Classroom;
-import Rooms.Closet;
-import Rooms.Hallway;
-import Rooms.Lab;
+import Rooms.Room;
 
-public class Room {
+public class School {
 
     private Room[][] school;
 
-    public Room(Room[][] school)
+    public School(Room[][] school)
     {
         this.school = school;
     }
 
-    public Room(int x, int y)
+    public School(int x, int y)
     {
         this.school = new Room[x][y];
     }

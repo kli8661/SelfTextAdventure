@@ -2,11 +2,11 @@ package Rooms;
 
 import People.Student;
 
-public class Hallway {
+public class Room {
     Student occupant;
     int xLoc,yLoc;
 
-    public Hallway(int x, int y)
+    public Room(int x, int y)
     {
         xLoc = x;
         yLoc = y;

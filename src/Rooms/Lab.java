@@ -2,7 +2,7 @@ package Rooms;
 
 import People.Student;
 
-public class Lab extends Hallway {
+public class Lab extends Room {
 
 	public Lab(int x, int y) {
 		super(x, y);
