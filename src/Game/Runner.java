@@ -25,12 +25,26 @@ public class Runner {
 			}
 		}
 
-		//Create a random winning room.
+		//Creates a Classroom
 		int x = (int)(Math.random()*school.length);
 		int y = (int)(Math.random()*school.length);
 		school[x][y] = new Classroom(x,y);
-		school[x][y] = new Closet(x,y);
-		school[x][y] = new Lab(x,y);
+		System.out.println(x);
+		System.out.println(y);
+
+		//Creates a Closet
+		int a = (int)(Math.random()*school.length);
+		int b = (int)(Math.random()*school.length);
+		school[x][y] = new Closet(a,b);
+		System.out.println(a);
+		System.out.println(b);
+
+		//Creates a Lab
+		int i = (int)(Math.random()*school.length);
+		int j = (int)(Math.random()*school.length);
+		school[x][y] = new Lab(i,j);
+		System.out.println(i);
+		System.out.println(j);
 
 		//Setup player 1 and the input scanner
 		Student player1 = new Student("FirstName", "FamilyName", 0,0);
