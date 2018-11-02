@@ -1,10 +1,8 @@
 package Rooms;
 
-import Game.Runner;
 import People.Student;
 
-public class Lab extends Hallway implements RoomType
-{
+public class Lab extends Hallway {
 
 	public Lab(int x, int y) {
 		super(x, y);
@@ -20,4 +18,12 @@ public class Lab extends Hallway implements RoomType
 		System.out.println("You found the lab.");
 	}
 
+	/**
+	 * Removes the player from the room.
+	 * @param x
+	 */
+	public void leaveRoom(Student x)
+	{
+		occupant = null;
+	}
 }

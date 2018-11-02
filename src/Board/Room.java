@@ -1,5 +1,10 @@
 package Board;
 
+import Rooms.Classroom;
+import Rooms.Closet;
+import Rooms.Hallway;
+import Rooms.Lab;
+
 public class Room {
 
     private Room[][] school;
@@ -14,9 +19,9 @@ public class Room {
         this.school = new Room[x][y];
     }
 
-    public void edit(Room replace, int row, int column)
+    public void edit(Room roomtype, int row, int column)
     {
-        school[row][column] = replace;
+        school[row][column] = roomtype;
     }
 
     public void fill(Room str)

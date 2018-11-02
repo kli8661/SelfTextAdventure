@@ -2,7 +2,7 @@ package Rooms;
 
 import People.Student;
 
-public class Hallway implements RoomType {
+public class Hallway {
     Student occupant;
     int xLoc,yLoc;
 

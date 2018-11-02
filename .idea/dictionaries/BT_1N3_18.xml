@@ -3,6 +3,7 @@
     <words>
       <w>boardstr</w>
       <w>getx</w>
+      <w>roomtype</w>
     </words>
   </dictionary>
 </component>
