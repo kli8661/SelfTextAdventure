@@ -1,6 +1,12 @@
 package Game;
 
+import People.Student;
+import Rooms.Classroom;
+import Rooms.Closet;
+import Rooms.Lab;
 import Rooms.Room;
+
+import java.util.Scanner;
 
 public class Runner {
 	
@@ -9,6 +15,7 @@ public class Runner {
 	
 	public static void main(String[] args)
 	{
+		//Fill the building with normal rooms
 		Room[][] school = new Room[6][6];
 		for(int x = 0; x < school.length; x++)
 		{
@@ -18,32 +25,22 @@ public class Runner {
 			}
 		}
 
-
-		/* RoomType[][] building = new RoomType[7][7];
-		
-		//Fill the building with normal rooms
-		for (int x = 0; x<building.length; x++)
-		{
-			for (int y = 0; y < building[x].length; y++)
-			{
-				building[x][y] = new Room(x,y);
-			}
-		}
-		
 		//Create a random winning room.
-		int x = (int)(Math.random()*building.length);
-		int y = (int)(Math.random()*building.length);
-		building[x][y] = new RoomType(x,y);
-		 
-		 //Setup player 1 and the input scanner
+		int x = (int)(Math.random()*school.length);
+		int y = (int)(Math.random()*school.length);
+		school[x][y] = new Classroom(x,y);
+		school[x][y] = new Closet(x,y);
+		school[x][y] = new Lab(x,y);
+
+		//Setup player 1 and the input scanner
 		Student player1 = new Student("FirstName", "FamilyName", 0,0);
-		building[0][0].enterRoom(player1);
+		school[0][0].enterRoom(player1);
 		Scanner in = new Scanner(System.in);
 		while(gameOn)
 		{
 			System.out.println("Where would you like to move? (Choose N, S, E, W)");
 			String move = in.nextLine();
-			if(validMove(move, player1, building))
+			if(validMove(move, player1, school))
 			{
 				System.out.println("Your coordinates: row = " + player1.getxLoc() + " col = " + player1.getyLoc());
 				
@@ -54,10 +51,10 @@ public class Runner {
 			
 			
 		}
-		in.close(); */
+		in.close();
 	}
 
-	/*
+
 	/**
 	 * Checks that the movement chosen is within the valid game map.
 	 * @param move the move chosen
@@ -65,8 +62,7 @@ public class Runner {
 	 * @param map the 2D array of rooms
 	 * @return
 	 */
-
-	/* public static boolean validMove(String move, Student p, RoomType[][] map)
+	public static boolean validMove(String move, Student p, Room[][] map)
 	{
 		move = move.toLowerCase().trim();
 		switch (move) {
@@ -126,7 +122,7 @@ public class Runner {
 	{
 		gameOn = false;
 	}
-	*/
+
 	
 
 
