@@ -5,7 +5,7 @@ import People.Student;
 public class Room {
     Student occupant;
     int xLoc,yLoc;
-    int entered;
+    boolean entered;
 
     public Room(int x, int y)
     {
@@ -13,7 +13,7 @@ public class Room {
         yLoc = y;
     }
 
-    public Room(int entered)
+    public Room(boolean entered)
     {
         this.entered = entered;
     }
@@ -28,7 +28,7 @@ public class Room {
         occupant = x;
         x.setxLoc(this.xLoc);
         x.setyLoc(this.yLoc);
-        entered++;
+        entered = true;
     }
 
     /**
@@ -38,15 +38,6 @@ public class Room {
     public void leaveRoom(Student x)
     {
         occupant = null;
-        entered++;
     }
 
-    public String ifEntered(Student x)
-    {
-        if(entered > 0)
-        {
-            return "You have already entered this room!";
-        }
-        return "";
-    }
 }

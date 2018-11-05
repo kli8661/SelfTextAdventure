@@ -15,8 +15,14 @@ public class Closet extends Room {
         occupant = x;
         x.setxLoc(this.xLoc);
         x.setyLoc(this.yLoc);
-        System.out.println("You found a closet.");
-        entered++;
+        if(entered == false)
+        {
+            System.out.println("You found a closet.");
+        }
+        else if(entered == true)
+        {
+            System.out.println("You found this closet already.");
+        }
     }
 
     /**
@@ -26,15 +32,6 @@ public class Closet extends Room {
     public void leaveRoom(Student x)
     {
         occupant = null;
-        entered++;
-    }
-
-    public String ifEntered(Student x)
-    {
-        if(entered > 0)
-        {
-            return "You have already entered this room!";
-        }
-        return "";
+        entered = true;
     }
 }
