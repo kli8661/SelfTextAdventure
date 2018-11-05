@@ -8,17 +8,13 @@ public class Classroom extends Room {
 		super(x, y);
 	}
 
-	/**
-	 * Triggers the game ending conditions.
-	 * @param x the Student entering
-	 */
 	@Override
 	public void enterRoom(Student x) {
 
 		occupant = x;
 		x.setxLoc(this.xLoc);
 		x.setyLoc(this.yLoc);
-		System.out.println("You found a classroom!");
+		System.out.println("You found a classroom.");
 	}
 
 	/**

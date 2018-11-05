@@ -4,8 +4,8 @@ import People.Student;
 
 public class Closet extends Room {
 
-    public Closet(int x, int y) {
-        super(x, y);
+    public Closet(int a, int b) {
+        super(a, b);
 
     }
 
