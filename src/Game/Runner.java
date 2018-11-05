@@ -15,6 +15,8 @@ public class Runner {
 	
 	public static void main(String[] args)
 	{
+		System.out.println("You woke up in an empty school, and you will need to find different rooms.\nOnce you collect all the clues you will make it out!");
+
 		//Fill the building with normal rooms
 		Room[][] school = new Room[6][6];
 		for(int x = 0; x < school.length; x++)
