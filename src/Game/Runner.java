@@ -65,8 +65,6 @@ public class Runner {
 			else {
 				System.out.println("Please choose a valid move.");
 			}
-			
-			
 		}
 		in.close();
 	}

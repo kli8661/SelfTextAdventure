@@ -16,9 +16,9 @@ public class School {
         this.school = new Room[x][y];
     }
 
-    public void edit(Room roomtype, int row, int column)
+    public void edit(Room replace, int row, int column)
     {
-        school[row][column] = roomtype;
+        school[row][column] = replace;
     }
 
     public void fill(Room str)

@@ -16,6 +16,7 @@ public class Lab extends Room {
 		x.setxLoc(this.xLoc);
 		x.setyLoc(this.yLoc);
 		System.out.println("You found the lab.");
+		entered++;
 	}
 
 	/**
@@ -25,5 +26,15 @@ public class Lab extends Room {
 	public void leaveRoom(Student x)
 	{
 		occupant = null;
+		entered++;
+	}
+
+	public String ifEntered(Student x)
+	{
+		if(entered > 0)
+		{
+			return "You have already entered this room!";
+		}
+		return "";
 	}
 }
