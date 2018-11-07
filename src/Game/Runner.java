@@ -9,13 +9,12 @@ import Rooms.Room;
 import java.util.Scanner;
 
 public class Runner {
-	
 
 	private static boolean gameOn = true;
 	
 	public static void main(String[] args)
 	{
-		System.out.println("You woke up in an empty school, and you will need to find different rooms.\nOnce you collect all the clues you will make it out!");
+		System.out.println("You woke up in an empty school, and you will need to find different rooms. \n Once you collect all the clues you will make it out!");
 
 		//Fill the building with normal rooms
 		Room[][] school = new Room[6][6];
