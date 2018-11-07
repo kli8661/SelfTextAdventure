@@ -34,4 +34,10 @@ public class Closet extends Room {
         occupant = null;
         entered = true;
     }
+
+    public String toString()
+    {
+        String closetstr = "[Closet]";
+        return closetstr;
+    }
 }

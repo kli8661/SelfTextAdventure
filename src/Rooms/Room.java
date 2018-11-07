@@ -40,4 +40,9 @@ public class Room {
         occupant = null;
     }
 
+    public String toString()
+    {
+        String hallwaystr = "[Hallway]";
+        return hallwaystr;
+    }
 }

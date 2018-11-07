@@ -35,4 +35,9 @@ public class Lab extends Room {
 		entered = true;
 	}
 
+	public String toString()
+	{
+		String labstr = "[Lab]";
+		return labstr;
+	}
 }

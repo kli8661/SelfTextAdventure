@@ -33,4 +33,10 @@ public class Classroom extends Room {
 		occupant = null;
 		entered = true;
 	}
+
+	public String toString()
+	{
+		String classstr = "[Classroom]";
+		return classstr;
+	}
 }
