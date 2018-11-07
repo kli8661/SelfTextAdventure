@@ -28,16 +28,25 @@ public class Lab extends Room {
 			System.out.println("c) Have someone pour water on you");
 			System.out.println("d) Call your mother.");
 			String answer = question.nextLine();
-			if (answer == "b") {
+			if (answer == "b")
+			{
 				System.out.println("Correct answer, you got a key fragment, combine them all to get out!");
 				key++;
-			} else if (answer == "a" || answer == "c" || answer == "d") {
-				System.out.println("Wrong answer, try again");
-				question.nextLine();
-			} else {
-				System.out.println("Input a valid answer!");
-				question.nextLine();
 			}
+			else
+			{
+				if (answer == "a" || answer == "c" || answer == "d") {
+					System.out.println("Wrong answer, try again");
+					question.nextLine();
+				}
+				else
+					{
+
+						System.out.println("Input a valid answer!");
+						question.nextLine();
+					}
+			}
+
 			question.close();
 			entered = true;
 		}
