@@ -6,6 +6,7 @@ public class Room {
     Student occupant;
     int xLoc,yLoc;
     boolean entered;
+    int key;
 
     public Room(int x, int y)
     {

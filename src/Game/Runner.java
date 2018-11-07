@@ -1,5 +1,6 @@
 package Game;
 
+import Item.LabQuestion;
 import People.Student;
 import Rooms.Classroom;
 import Rooms.Closet;
@@ -50,6 +51,8 @@ public class Runner {
 		System.out.println(c);
 		System.out.println(d);
 
+
+
 		//Setup player 1 and the input scanner
 		Student player1 = new Student("FirstName", "FamilyName", 0,0);
 		school[0][0].enterRoom(player1);
@@ -81,6 +84,7 @@ public class Runner {
 	public static boolean validMove(String move, Student p, Room[][] map)
 	{
 		move = move.toLowerCase().trim();
+
 		switch (move) {
 			case "w":
 				if (p.getxLoc() > 0)
@@ -132,6 +136,7 @@ public class Runner {
 				break;
 					
 		}
+
 		return true;
 	}
 	public static void gameOff()
