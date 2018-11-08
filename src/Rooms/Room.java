@@ -45,7 +45,7 @@ public class Room {
         entered = true;
         if(x.getKey() == 3)
         {
-            System.out.println("You have found all the keys and escaped the school!");
+            System.out.println("You have found all the key fragments and escaped the school!");
             Runner.gameOff();
         }
     }
