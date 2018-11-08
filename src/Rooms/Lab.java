@@ -4,6 +4,8 @@ import People.Student;
 
 import java.util.Scanner;
 
+import static Game.Runner.gameOff;
+
 public class Lab extends Room {
 
 	public Lab(int c, int d) {
@@ -17,44 +19,44 @@ public class Lab extends Room {
 		occupant = x;
 		x.setxLoc(this.xLoc);
 		x.setyLoc(this.yLoc);
+		x.setKey(this.key);
 		Scanner question = new Scanner(System.in);
-		while(!entered) {
+		if(!entered)
+		{
 			System.out.println("You stumbled upon a lab!");
 			System.out.println("Here's a multiple choice question for you.");
 			System.out.println("What do you do during if fire gets on your clothing?");
-			System.out.println("Type in 'a' 'b' 'c' or 'd' for your multiple choice answer.");
-			System.out.println("a) Run around and scream.");
-			System.out.println("b) Drop and roll to extinguish the fire.");
-			System.out.println("c) Have someone pour water on you");
-			System.out.println("d) Call your mother.");
+			System.out.println("Type in 'i', 'j', 'k' or 'l' for your multiple choice answer.");
+			System.out.println("i) Run around and scream.");
+			System.out.println("j) Drop and roll to extinguish the fire.");
+			System.out.println("k) Have someone pour water on you");
+			System.out.println("l) Call your mother.");
 			String answer = question.nextLine();
-			if (answer == "b")
+			if(answer.equals("j"))
 			{
 				System.out.println("Correct answer, you got a key fragment, combine them all to get out!");
-				key++;
+				this.key++;
+				System.out.println("You currently have " + key + " key fragment(s).");
 			}
-			else
-			{
-				if (answer == "a" || answer == "c" || answer == "d") {
-					System.out.println("Wrong answer, try again");
-					question.nextLine();
-				}
-				else
+			else {
+				while(!answer.equals("j"))
+				{
+					System.out.println("Wrong answer, try again.");
+					answer = question.nextLine();
+					if(answer.equals("j"))
 					{
-
-						System.out.println("Input a valid answer!");
-						question.nextLine();
+						System.out.println("Correct answer, you got a key fragment, combine them all to get out!");
+						this.key++;
+						System.out.println("You currently have " + key + " key fragment(s).");
 					}
+				}
 			}
-
-			question.close();
-			entered = true;
 		}
-		if(entered)
+		else
 		{
-			System.out.println("You've entered this lab already.");
+			System.out.println("You've already answered a question in this lab.");
+			System.out.println("You have " + key + " key fragment(s).");
 		}
-
 	}
 
 	/**
@@ -65,11 +67,10 @@ public class Lab extends Room {
 	{
 		occupant = null;
 		entered = true;
+		if(key == 3)
+		{
+			gameOff();
+		}
 	}
 
-	public String toString()
-	{
-		String labstr = "[Lab]";
-		return labstr;
-	}
 }

@@ -2,6 +2,10 @@ package Rooms;
 
 import People.Student;
 
+import java.util.Scanner;
+
+import static Game.Runner.gameOff;
+
 public class Closet extends Room {
 
     public Closet(int a, int b) {
@@ -15,13 +19,43 @@ public class Closet extends Room {
         occupant = x;
         x.setxLoc(this.xLoc);
         x.setyLoc(this.yLoc);
+        x.setKey(this.key);
+        Scanner question = new Scanner(System.in);
         if(!entered)
         {
-            System.out.println("You found a closet.");
+            System.out.println("You fell into a closet!");
+            System.out.println("Here's a multiple choice question for you.");
+            System.out.println("What doesn't belong in a closet?");
+            System.out.println("Type in 'i', 'j', 'k' or 'l' for your multiple choice answer.");
+            System.out.println("i) T-Shirts.");
+            System.out.println("j) Prom Dress.");
+            System.out.println("k) Big Mac Sandwich.");
+            System.out.println("l) A jacket.");
+            String answer = question.nextLine();
+            if(answer.equals("k"))
+            {
+                System.out.println("Correct answer, you got a key fragment, combine them all to get out!");
+                this.key++;
+                System.out.println("You currently have " + key + " key fragment(s).");
+            }
+            else {
+                while(!answer.equals("k"))
+                {
+                    System.out.println("Wrong answer, try again.");
+                    answer = question.nextLine();
+                    if(answer.equals("k"))
+                    {
+                        System.out.println("Correct answer, you got a key fragment, combine them all to get out!");
+                        this.key++;
+                        System.out.println("You currently have " + key + " key fragment(s).");
+                    }
+                }
+            }
         }
         else
         {
             System.out.println("You found this closet already.");
+            System.out.println("You have " + key + " key fragment(s).");
         }
     }
 
@@ -33,6 +67,10 @@ public class Closet extends Room {
     {
         occupant = null;
         entered = true;
+        if(key == 3)
+        {
+            gameOff();
+        }
     }
 
     public String toString()

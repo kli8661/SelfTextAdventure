@@ -1,6 +1,5 @@
 package Game;
 
-import Item.LabQuestion;
 import People.Student;
 import Rooms.Classroom;
 import Rooms.Closet;

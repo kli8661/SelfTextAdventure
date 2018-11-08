@@ -2,6 +2,8 @@ package Rooms;
 
 import People.Student;
 
+import static Game.Runner.gameOff;
+
 public class Room {
     Student occupant;
     int xLoc,yLoc;
@@ -19,6 +21,7 @@ public class Room {
         this.entered = entered;
     }
 
+
     /**
      * Method controls the results when a person enters this room.
      * @param x the Student entering
@@ -29,6 +32,7 @@ public class Room {
         occupant = x;
         x.setxLoc(this.xLoc);
         x.setyLoc(this.yLoc);
+        x.setKey(this.key);
         entered = true;
     }
 
@@ -39,6 +43,11 @@ public class Room {
     public void leaveRoom(Student x)
     {
         occupant = null;
+        entered = true;
+        if(key == 3)
+        {
+            gameOff();
+        }
     }
 
     public String toString()
