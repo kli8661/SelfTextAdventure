@@ -7,7 +7,7 @@ public class Student {
 	String firstName;
 	String familyName;
 	int xLoc, yLoc;
-	int key;
+	private int key;
 
 	public int getxLoc() {
 		return xLoc;

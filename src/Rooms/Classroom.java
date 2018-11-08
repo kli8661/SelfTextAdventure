@@ -1,5 +1,6 @@
 package Rooms;
 
+import Game.Runner;
 import People.Student;
 
 import java.util.Scanner;
@@ -18,7 +19,6 @@ public class Classroom extends Room {
 		occupant = x;
 		x.setxLoc(this.xLoc);
 		x.setyLoc(this.yLoc);
-		x.setKey(this.key);
         Scanner question = new Scanner(System.in);
 		if(!entered)
 		{
@@ -34,8 +34,8 @@ public class Classroom extends Room {
             if(answer.equals("i"))
             {
                 System.out.println("Correct answer, you got a key fragment, combine them all to get out!");
-                key++;
-                System.out.println("You currently have " + key + " key fragment(s).");
+                x.setKey(x.getKey() + 1);
+                System.out.println("You currently have " + x.getKey() + " key fragment(s).");
             }
             else {
                 while(!answer.equals("i"))
@@ -45,8 +45,8 @@ public class Classroom extends Room {
                     if(answer.equals("i"))
                     {
                         System.out.println("Correct answer, you got a key fragment, combine them all to get out!");
-                        this.key++;
-                        System.out.println("You currently have " + key + " key fragment(s).");
+                        x.setKey(x.getKey() + 1);
+                        System.out.println("You currently have " + x.getKey() + " key fragment(s).");
                     }
                 }
             }
@@ -54,7 +54,7 @@ public class Classroom extends Room {
 		else
 		{
 			System.out.println("You've already answered a question in this classroom.");
-            System.out.println("You have " + key + " key fragment(s).");
+            System.out.println("You have " + x.getKey() + " key fragment(s).");
 		}
 	}
 
@@ -66,9 +66,10 @@ public class Classroom extends Room {
 	{
 		occupant = null;
 		entered = true;
-		if(key == 3)
+		if(x.getKey() == 3)
 		{
-			gameOff();
+            System.out.println("You have found all the keys and escaped the school!");
+            Runner.gameOff();
 		}
 	}
 

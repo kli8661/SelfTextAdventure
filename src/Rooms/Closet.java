@@ -1,5 +1,6 @@
 package Rooms;
 
+import Game.Runner;
 import People.Student;
 
 import java.util.Scanner;
@@ -19,7 +20,6 @@ public class Closet extends Room {
         occupant = x;
         x.setxLoc(this.xLoc);
         x.setyLoc(this.yLoc);
-        x.setKey(this.key);
         Scanner question = new Scanner(System.in);
         if(!entered)
         {
@@ -35,8 +35,8 @@ public class Closet extends Room {
             if(answer.equals("k"))
             {
                 System.out.println("Correct answer, you got a key fragment, combine them all to get out!");
-                this.key++;
-                System.out.println("You currently have " + key + " key fragment(s).");
+                x.setKey(x.getKey() + 1);
+                System.out.println("You currently have " + x.getKey() + " key fragment(s).");
             }
             else {
                 while(!answer.equals("k"))
@@ -46,8 +46,8 @@ public class Closet extends Room {
                     if(answer.equals("k"))
                     {
                         System.out.println("Correct answer, you got a key fragment, combine them all to get out!");
-                        this.key++;
-                        System.out.println("You currently have " + key + " key fragment(s).");
+                        x.setKey(x.getKey() + 1);
+                        System.out.println("You currently have " + x.getKey() + " key fragment(s).");
                     }
                 }
             }
@@ -55,7 +55,7 @@ public class Closet extends Room {
         else
         {
             System.out.println("You found this closet already.");
-            System.out.println("You have " + key + " key fragment(s).");
+            System.out.println("You have " + x.getKey() + " key fragment(s).");
         }
     }
 
@@ -67,9 +67,10 @@ public class Closet extends Room {
     {
         occupant = null;
         entered = true;
-        if(key == 3)
+        if(x.getKey() == 3)
         {
-            gameOff();
+            System.out.println("You have found all the keys and escaped the school!");
+            Runner.gameOff();
         }
     }
 

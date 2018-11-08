@@ -1,5 +1,6 @@
 package Rooms;
 
+import Game.Runner;
 import People.Student;
 
 import static Game.Runner.gameOff;
@@ -8,7 +9,6 @@ public class Room {
     Student occupant;
     int xLoc,yLoc;
     boolean entered;
-    int key;
 
     public Room(int x, int y)
     {
@@ -32,7 +32,6 @@ public class Room {
         occupant = x;
         x.setxLoc(this.xLoc);
         x.setyLoc(this.yLoc);
-        x.setKey(this.key);
         entered = true;
     }
 
@@ -44,9 +43,10 @@ public class Room {
     {
         occupant = null;
         entered = true;
-        if(key == 3)
+        if(x.getKey() == 3)
         {
-            gameOff();
+            System.out.println("You have found all the keys and escaped the school!");
+            Runner.gameOff();
         }
     }
 
