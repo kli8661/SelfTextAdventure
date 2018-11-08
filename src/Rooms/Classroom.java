@@ -36,6 +36,11 @@ public class Classroom extends Room {
                 System.out.println("Correct answer, you got a key fragment, combine them all to get out!");
                 x.setKey(x.getKey() + 1);
                 System.out.println("You currently have " + x.getKey() + " key fragment(s).");
+                if(x.getKey() == 3)
+                {
+                    System.out.println("You have found all the keys and escaped the school!");
+                    Runner.gameOff();
+                }
             }
             else {
                 while(!answer.equals("i"))
@@ -47,6 +52,11 @@ public class Classroom extends Room {
                         System.out.println("Correct answer, you got a key fragment, combine them all to get out!");
                         x.setKey(x.getKey() + 1);
                         System.out.println("You currently have " + x.getKey() + " key fragment(s).");
+                        if(x.getKey() == 3)
+                        {
+                            System.out.println("You have found all the keys and escaped the school!");
+                            Runner.gameOff();
+                        }
                     }
                 }
             }
@@ -55,6 +65,11 @@ public class Classroom extends Room {
 		{
 			System.out.println("You've already answered a question in this classroom.");
             System.out.println("You have " + x.getKey() + " key fragment(s).");
+            if(x.getKey() == 3)
+            {
+                System.out.println("You have found all the keys and escaped the school!");
+                Runner.gameOff();
+            }
 		}
 	}
 
