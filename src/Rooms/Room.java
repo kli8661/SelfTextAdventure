@@ -3,8 +3,6 @@ package Rooms;
 import Game.Runner;
 import People.Student;
 
-import static Game.Runner.gameOff;
-
 public class Room {
     Student occupant;
     int xLoc,yLoc;

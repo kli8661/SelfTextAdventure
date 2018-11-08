@@ -5,8 +5,6 @@ import People.Student;
 
 import java.util.Scanner;
 
-import static Game.Runner.gameOff;
-
 public class Classroom extends Room {
 
 	public Classroom(int x, int y) {
