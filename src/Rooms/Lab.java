@@ -82,5 +82,4 @@ public class Lab extends Room {
 		occupant = null;
 		entered = true;
 	}
-
 }

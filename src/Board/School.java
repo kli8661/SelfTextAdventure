@@ -32,7 +32,7 @@ public class School {
         }
     }
 
-    public String printschool()
+    public String toString()
     {
         String boardstr = "";
         for(int i = 0; i < school.length; i++)

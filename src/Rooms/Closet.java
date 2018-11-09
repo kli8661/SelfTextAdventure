@@ -83,9 +83,4 @@ public class Closet extends Room {
         entered = true;
     }
 
-    public String toString()
-    {
-        String closetstr = "[Closet]";
-        return closetstr;
-    }
 }
