@@ -37,6 +37,11 @@ public class Runner {
 		//Creates Closet
 		int a = (int)(Math.random()*school.length);
 		int b = (int)(Math.random()*school.length);
+		if(a == x && b == y)
+		{
+			a = (int)(Math.random()*school.length);
+			b = (int)(Math.random()*school.length);
+		}
 		school[a][b] = new Closet(a,b);
 		System.out.println("Closet");
 		System.out.println(a);
@@ -45,6 +50,16 @@ public class Runner {
 		//Creates Lab
 		int c = (int)(Math.random()*school.length);
 		int d = (int)(Math.random()*school.length);
+		if(c == x && d == y)
+		{
+			c = (int)(Math.random()*school.length);
+			d = (int)(Math.random()*school.length);
+		}
+		if(c == a && c == b)
+		{
+			c = (int)(Math.random()*school.length);
+			d = (int)(Math.random()*school.length);
+		}
 		school[c][d] = new Lab(c,d);
 		System.out.println("Lab");
 		System.out.println(c);
