@@ -37,7 +37,7 @@ public class Runner {
 		//Creates Closet
 		int a = (int)(Math.random()*school.length);
 		int b = (int)(Math.random()*school.length);
-		if(a == x && b == y)
+		if(a == x && b == y) //Makes sure Closet and such cannot have same coordinates as other rooms.
 		{
 			a = (int)(Math.random()*school.length);
 			b = (int)(Math.random()*school.length);
@@ -65,8 +65,6 @@ public class Runner {
 		System.out.println(c);
 		System.out.println(d);
 
-
-
 		//Setup player 1 and the input scanner
 		Student player1 = new Student("FirstName", "FamilyName", 0,0);
 		school[0][0].enterRoom(player1);
@@ -86,7 +84,6 @@ public class Runner {
 		}
 		in.close();
 	}
-
 
 	/**
 	 * Checks that the movement chosen is within the valid game map.

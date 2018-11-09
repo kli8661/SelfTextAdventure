@@ -41,6 +41,7 @@ public class Student {
 		this.familyName = familyName;
 	}
 
+	//Gets and sets key values so user can collect them and get out the building.
 	public int getKey() {
 		return key;
 	}

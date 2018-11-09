@@ -13,6 +13,7 @@ public class Lab extends Room {
 	}
 
 	@Override
+	//Student answers question upon entering the lab.
 	public void enterRoom(Student x) {
 
 		occupant = x;
@@ -80,11 +81,6 @@ public class Lab extends Room {
 	{
 		occupant = null;
 		entered = true;
-		if(x.getKey() == 3)
-		{
-			System.out.println("You have found all the keys and escaped the school!");
-			Runner.gameOff();
-		}
 	}
 
 }

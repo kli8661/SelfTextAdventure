@@ -13,6 +13,7 @@ public class Closet extends Room {
     }
 
     @Override
+    //Same as Lab & Room
     public void enterRoom(Student x) {
 
         occupant = x;
@@ -80,11 +81,6 @@ public class Closet extends Room {
     {
         occupant = null;
         entered = true;
-        if(x.getKey() == 3)
-        {
-            System.out.println("You have found all the keys and escaped the school!");
-            Runner.gameOff();
-        }
     }
 
     public String toString()

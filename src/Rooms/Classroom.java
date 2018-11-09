@@ -12,7 +12,10 @@ public class Classroom extends Room {
 	}
 
 	@Override
-	public void enterRoom(Student x) {
+    /**
+     * Runs when student enters room, makes them answer a question.
+     */
+    public void enterRoom(Student x) {
 
 		occupant = x;
 		x.setxLoc(this.xLoc);
@@ -32,7 +35,7 @@ public class Classroom extends Room {
             if(answer.equals("i"))
             {
                 System.out.println("Correct answer, you got a key fragment, combine them all to get out!");
-                x.setKey(x.getKey() + 1);
+                x.setKey(x.getKey() + 1); //Increments key integer if student answers a question correctly, collect all 3 to win the game.
                 System.out.println("You currently have " + x.getKey() + " key fragment(s).");
                 if(x.getKey() == 3)
                 {
@@ -79,11 +82,6 @@ public class Classroom extends Room {
 	{
 		occupant = null;
 		entered = true;
-		if(x.getKey() == 3)
-		{
-            System.out.println("You have found all the keys and escaped the school!");
-            Runner.gameOff();
-		}
 	}
 
 	public String toString()
