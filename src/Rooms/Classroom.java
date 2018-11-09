@@ -32,7 +32,7 @@ public class Classroom extends Room {
             System.out.println("k) (5, 15)");
             System.out.println("l) (7, -8)");
             String answer = question.nextLine();
-            if(answer.equals("i"))
+            if(answer.equals("j"))
             {
                 System.out.println("Correct answer, you got a key fragment, combine them all to get out!");
                 x.setKey(x.getKey() + 1); //Increments key integer if student answers a question correctly, collect all 3 to win the game.
@@ -44,11 +44,11 @@ public class Classroom extends Room {
                 }
             }
             else {
-                while(!answer.equals("i"))
+                while(!answer.equals("j"))
                 {
                     System.out.println("Wrong answer, try again.");
                     answer = question.nextLine();
-                    if(answer.equals("i"))
+                    if(answer.equals("j"))
                     {
                         System.out.println("Correct answer, you got a key fragment, combine them all to get out!");
                         x.setKey(x.getKey() + 1);
