@@ -83,4 +83,11 @@ public class Closet extends Room {
         entered = true;
     }
 
+    public String toString()
+    {
+        if(entered) {
+            return "{*}";
+        }
+        return "{ }";
+    }
 }

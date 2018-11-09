@@ -4,42 +4,21 @@ import Rooms.Room;
 
 public class School {
 
-    private Room[][] school;
+    private Room[][] schoolmap;
 
-    public School(Room[][] school)
+    public School(Room[][] schoolmap)
     {
-        this.school = school;
+        this.schoolmap = schoolmap;
     }
 
-    public School(int x, int y)
-    {
-        this.school = new Room[x][y];
-    }
-
-    public void edit(Room replace, int row, int column)
-    {
-        school[row][column] = replace;
-    }
-
-    public void fill(Room str)
-    {
-        for(int i = 0; i < school.length; i++)
-        {
-            for(int j = 0; j < school[i].length; j++)
-            {
-                school[i][j] = str;
-            }
-        }
-    }
-
-    public String toString()
+    public String printBoard()
     {
         String boardstr = "";
-        for(int i = 0; i < school.length; i++)
+        for(int i = 0; i < schoolmap.length; i++)
         {
-            for(int j = 0; j < school[i].length; j++)
+            for(int j = 0; j < schoolmap[i].length; j++)
             {
-                boardstr += school[i][j];
+                boardstr += schoolmap[i][j].toString();
             }
             boardstr += "\n";
         }

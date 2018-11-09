@@ -3,7 +3,11 @@
     <words>
       <w>boardstr</w>
       <w>getx</w>
+      <w>gety</w>
       <w>roomtype</w>
+      <w>schoolmap</w>
+      <w>setx</w>
+      <w>sety</w>
     </words>
   </dictionary>
 </component>

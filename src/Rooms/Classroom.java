@@ -13,7 +13,7 @@ public class Classroom extends Room {
 
 	@Override
     /**
-     * Runs when student enters room, makes them answer a question.
+     * Enters room and answers a question.
      */
     public void enterRoom(Student x) {
 
@@ -83,4 +83,12 @@ public class Classroom extends Room {
 		occupant = null;
 		entered = true;
 	}
+
+	public String toString()
+    {
+        if(entered) {
+            return "{*}";
+        }
+        return "{ }";
+    }
 }

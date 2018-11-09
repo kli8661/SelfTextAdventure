@@ -4,9 +4,7 @@ package People;
  * Student represents the player as they move through the game.
  */
 public class Student {
-	String firstName;
-	String familyName;
-	int xLoc, yLoc;
+	private int xLoc, yLoc;
 	private int key;
 
 	public int getxLoc() {
@@ -25,22 +23,6 @@ public class Student {
 		this.yLoc = yLoc;
 	}
 
-	public String getFirstName() {
-		return firstName;
-	}
-
-	public void setFirstName(String firstName) {
-		this.firstName = firstName;
-	}
-
-	public String getFamilyName() {
-		return familyName;
-	}
-
-	public void setFamilyName(String familyName) {
-		this.familyName = familyName;
-	}
-
 	//Gets and sets key values so user can collect them and get out the building.
 	public int getKey() {
 		return key;
@@ -50,13 +32,9 @@ public class Student {
 		this.key = key;
 	}
 
-	public Student(String firstName, String familyName, int xLoc, int yLoc)
+	public Student(int xLoc, int yLoc)
 	{
-		this.firstName = firstName;
-		this.familyName = familyName;
 		this.xLoc = xLoc;
 		this.yLoc = yLoc;
-		this.key = key;
 	}
-
 }

@@ -82,4 +82,12 @@ public class Lab extends Room {
 		occupant = null;
 		entered = true;
 	}
+
+	public String toString()
+	{
+		if(entered) {
+			return "{*}";
+		}
+		return "{ }";
+	}
 }

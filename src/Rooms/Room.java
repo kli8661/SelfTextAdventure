@@ -19,7 +19,6 @@ public class Room {
         this.entered = entered;
     }
 
-
     /**
      * Method controls the results when a person enters this room.
      * @param x the Student entering
@@ -48,4 +47,11 @@ public class Room {
         }
     }
 
+    public String toString()
+    {
+        if(entered) {
+            return "{*}";
+        }
+        return "{ }";
+    }
 }

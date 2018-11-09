@@ -1,11 +1,11 @@
 package Game;
 
+import Board.School;
 import People.Student;
 import Rooms.Classroom;
 import Rooms.Closet;
 import Rooms.Lab;
 import Rooms.Room;
-
 import java.util.Scanner;
 
 public class Runner {
@@ -14,10 +14,11 @@ public class Runner {
 	
 	public static void main(String[] args)
 	{
-		System.out.println("You woke up in an empty school, and you will need to find different rooms. \n Once you collect all the clues you will make it out!");
+		System.out.println("You woke up in an empty school, and you will need to find different rooms. \nOnce you collect all the clues you will make it out!");
+		System.out.println("A trail of where you have been will be shown by a '*'.");
 
 		//Fill the building with normal rooms
-		Room[][] school = new Room[6][6];
+		Room[][] school = new Room[7][7];
 		for(int x = 0; x < school.length; x++)
 		{
 			for(int y = 0; y < school[x].length; y++)
@@ -30,9 +31,6 @@ public class Runner {
 		int x = (int)(Math.random()*school.length);
 		int y = (int)(Math.random()*school.length);
 		school[x][y] = new Classroom(x,y);
-		System.out.println("Classroom");
-		System.out.println(x);
-		System.out.println(y);
 
 		//Creates Closet
 		int a = (int)(Math.random()*school.length);
@@ -43,9 +41,6 @@ public class Runner {
 			b = (int)(Math.random()*school.length);
 		}
 		school[a][b] = new Closet(a,b);
-		System.out.println("Closet");
-		System.out.println(a);
-		System.out.println(b);
 
 		//Creates Lab
 		int c = (int)(Math.random()*school.length);
@@ -61,13 +56,12 @@ public class Runner {
 			d = (int)(Math.random()*school.length);
 		}
 		school[c][d] = new Lab(c,d);
-		System.out.println("Lab");
-		System.out.println(c);
-		System.out.println(d);
 
 		//Setup player 1 and the input scanner
-		Student player1 = new Student("FirstName", "FamilyName", 0,0);
+		Student player1 = new Student(0,0);
 		school[0][0].enterRoom(player1);
+		School tech = new School(school);
+		System.out.print(tech.printBoard());
 		Scanner in = new Scanner(System.in);
 		while(gameOn)
 		{
@@ -75,8 +69,8 @@ public class Runner {
 			String move = in.nextLine();
 			if(validMove(move, player1, school))
 			{
+				System.out.print(tech.printBoard());
 				System.out.println("Your coordinates: row = " + player1.getxLoc() + " col = " + player1.getyLoc());
-				
 			}
 			else {
 				System.out.println("Please choose a valid move.");
